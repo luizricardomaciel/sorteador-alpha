@@ -18,7 +18,19 @@ sortear.addEventListener("click", function() {
     listaNomes.forEach(nome => {
         criarDivNome(nome);
     });
+
+    const numeroAletorio = pegarNumeroAleatorioListaNomes(listaNomes);
+
+    console.log(listaNomes[numeroAletorio]);
+
+    
 });
+
+function pegarNumeroAleatorioListaNomes(listaNomes){
+    const numeroAleatorio = Math.floor(Math.random() * listaNomes.length);
+
+    return numeroAleatorio;
+}
 
 function criarDivNome(nome){
     const div = document.createElement("div");
