@@ -214,3 +214,27 @@ input[type="number"]::-webkit-outer-spin-button {
   align-items: center;
   gap: 13px;
 }
+
+.sorteador.nomes {
+  background-color: transparent;
+}
+
+.text textarea {
+  width: 709px;
+  height: 192px;
+  padding: 16px;
+  border: 2px solid #27272a;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #18181b;
+  color: #e4e4e7;
+  font-size: 16px;
+  font-family: inherit;
+  resize: none;
+  transition: 0.3s;
+}
+
+.text textarea:focus {
+  outline: 1px solid rgba(95, 158, 160, 0);
+  border: 2px solid var(--cor-primaria);
+}
