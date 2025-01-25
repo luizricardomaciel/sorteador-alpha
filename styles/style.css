@@ -69,3 +69,46 @@ header ul li a {
 header ul li a:hover {
   color: var(--cor-primaria);
 }
+
+.toggle-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cor-texto-300);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle-label:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--cor-texto-100);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: var(--cor-primaria);
+}
+
+.toggle-checkbox:checked + .toggle-label:before {
+  transform: translateX(26px);
+}
