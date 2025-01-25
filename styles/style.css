@@ -53,6 +53,10 @@ header .container {
   height: 88px;
 }
 
+header .logo {
+  cursor: pointer;
+}
+
 header ul {
   display: flex;
   gap: 55px;
