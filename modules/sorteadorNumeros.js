@@ -53,7 +53,7 @@ function obterValores() {
 
 function validarValores() {
     const { quantidade, comecoNum, finalNum, botaoSortear, naoRepetir } = obterValores();
-    
+
     if (!quantidade || !comecoNum || !finalNum || comecoNum >= finalNum || (quantidade > (finalNum - comecoNum + 1) && naoRepetir.checked)) {
         botaoSortear.disabled = true;
     } else {
@@ -61,19 +61,18 @@ function validarValores() {
     }
 }
 
-
 function sortearNumeros() {
     const { quantidade, comecoNum, finalNum, naoRepetir } = obterValores();
 
     const resultados = [];
-    const resultadoDiv = document.getElementById("resultado-numeros"); 
+    const resultadoDiv = document.getElementById("resultado-numeros");
 
     resultadoDiv.innerHTML = '';
 
     if (quantidade > (finalNum - comecoNum + 1)) {
         const aviso = document.createElement("p");
-        aviso.textContent =`A quantidade de números que você deseja sortear é maior que
-        o intervalo dos dois números selecionados`; 
+        aviso.textContent = `A quantidade de números que você deseja sortear é maior que
+        o intervalo dos dois números selecionados`;
         resultadoDiv.appendChild(aviso);
         return;
     }
@@ -81,12 +80,11 @@ function sortearNumeros() {
     for (let i = 0; i < quantidade; i++) {
         const numeroSorteado = Math.floor(Math.random() * (finalNum - comecoNum + 1)) + comecoNum;
 
-        // Se "não repetir", verifica se o número já foi sorteado
         if (naoRepetir) {
             if (!resultados.includes(numeroSorteado)) {
                 resultados.push(numeroSorteado);
             } else {
-                i--; // Se o número já foi sorteado, tenta novamente
+                i--;
             }
         } else {
             resultados.push(numeroSorteado);
@@ -95,8 +93,8 @@ function sortearNumeros() {
 
     resultados.forEach((numero) => {
         const numResultado = document.createElement("p");
-        numResultado.textContent = numero; 
-        resultadoDiv.appendChild(numResultado); 
+        numResultado.textContent = numero;
+        resultadoDiv.appendChild(numResultado);
     });
 }
 
