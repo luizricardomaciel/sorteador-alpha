@@ -6,9 +6,12 @@ export function pegarNumeroAleatorioListaNomes(listaNomes){
 
 export function criarDivNome(nome){
     const div = document.createElement("div");
+    div.classList.add("divNome");
 
-    const p = document.createElement("p");
-    p.innerText = nome;
+    const h2 = document.createElement("h2");
+    h2.innerText = nome;
 
-    div.appendChild(p);
+    div.appendChild(h2);
+
+    return div;
 }

@@ -238,3 +238,44 @@ input[type="number"]::-webkit-outer-spin-button {
   outline: 1px solid rgba(95, 158, 160, 0);
   border: 2px solid var(--cor-primaria);
 }
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.divNome {
+  /* Rectangle 7 */
+
+  box-sizing: border-box;
+
+  width: 709px;
+  height: 74px;
+  left: 605px;
+  top: 372px;
+
+  border: 2px solid var(--cor-terciaria-100);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+
+}
+
+#divTotalNomes {
+  display: none;
+  align-items: right;
+  padding: 20px;
+  justify-content: end;
+  width: 100%;
+}
+
+#voltar {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-200);
+  display: none;
+}
