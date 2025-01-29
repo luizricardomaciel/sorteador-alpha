@@ -30,7 +30,7 @@ const conteudoNumeros = `
   </div>
 `;
 
-function carregarConteudo() {
+export function carregarConteudo() {
     root.innerHTML = conteudoNumeros;
 
     document.getElementById("quantidade").addEventListener("input", validarValores);
