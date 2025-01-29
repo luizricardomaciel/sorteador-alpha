@@ -1,85 +1,26 @@
 import { criarSorteadorNomePage } from "./pages/sorteador-nomes-page.js";
-import {pegarNumeroAleatorioListaNomes, criarDivNome} from "./modules/sorteador-nome.js"
+import { carregarConteudo } from "./modules/numeros/sorteadorNumeros.js";
+import { initSorteioNomes } from "./modules/nomes/sorteador-nomes-handler.js";
 
 const root = document.getElementById("root");
 
-root.appendChild(criarSorteadorNomePage());
-
-const quantidadeSortear = document.getElementById("quantidade-sortear");
-const textarea = document.querySelector(".textarea");
-const sortear = document.getElementById("sortear");
-const show_hide = document.getElementById("show-hide");
-const divTotalNomes = document.getElementById("divTotalNomes");
-const quantidadeNomesSorteados = document.getElementById("quantidadeNomesSorteados");
-const inputNaoRepetir = document.getElementById("toggle-switch");
-const voltar = document.getElementById("voltar");
-const nomesSorteados = document.getElementById("nomesSorteados");
-
-let primeiraVez = true;
-let quantidadeNomes = 0;
-let naoRepetir = false;
-let listaNomes = [];
-
-sortear.addEventListener("click", function() {
-    nomesSorteados.style.display = "block";
-    show_hide.style.display = "None";
-    voltar.style.display = "block";
-    divTotalNomes.style.display = "flex";
-    if (inputNaoRepetir.checked) {
-        naoRepetir = true;
-    } else {
-        naoRepetir = false;
-    }
-
-    if(primeiraVez == true) {
-        divTotalNomes.style.display = "flex";
-        primeiraVez = false;
-
-        const valorTextarea = textarea.value;
-    
-        listaNomes = valorTextarea
-            .split(",")
-            .map(item => item.trim())
-            .filter(item => item !== "");
-    
-        console.log(listaNomes);
-    }
-
-    if(listaNomes.length == 0) {
-        return;
-    }
-
-    listaNomes.forEach(nome => {
-        criarDivNome(nome);
-    });
-
-    const quantidade = quantidadeSortear.value;
-
-    for(let i = 0; i < quantidade; i++) {
-        if(listaNomes.length == 0) {
-            return;
+const init = () => {
+    window.addEventListener("hashchange", function() {
+        root.innerHTML = "";
+        switch(this.window.location.hash) {
+            case " ":
+                root.appendChild(carregarConteudo());
+                break;
+            case "#SorteioNomes":
+                root.appendChild(criarSorteadorNomePage());
+                initSorteioNomes();
+                break;
+            default:
+                root.appendChild(carregarConteudo());
         }
-        const numeroAletorio = pegarNumeroAleatorioListaNomes(listaNomes);
-        const sorteado = listaNomes[numeroAletorio];
+    })
+}
 
-        if(naoRepetir == true) {
-            listaNomes.splice(numeroAletorio, 1);
-            console.log(listaNomes);
-        }
-
-        nomesSorteados.appendChild(criarDivNome(sorteado));
-        quantidadeNomes += 1;
-        quantidadeNomesSorteados.innerText = quantidadeNomes;
-    }
-});
-
-voltar.addEventListener("click", function() {
-    show_hide.style.display = "block";
-    voltar.style.display = "none";
-    nomesSorteados.innerHTML = "";
-    nomesSorteados.style.display = "none";
-    divTotalNomes.style.display = "none";
-    listaNomes = [];
-    primeiraVez = true;
-    quantidadeNomes = 0;
+window.addEventListener("load", function() {
+    init();
 });
