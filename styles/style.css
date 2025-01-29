@@ -127,6 +127,7 @@ header ul li a:hover {
 .spa-result {
   width: 100%;
   max-width: 709px;
+  padding-bottom: 35px;
 }
 .spa-result .title {
   display: flex;
@@ -217,9 +218,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .sorteador.nomes {
   background-color: transparent;
+  height: auto;
 }
 
 .text textarea {
+  margin-top: 32px;
+
   width: 709px;
   height: 192px;
   padding: 16px;
@@ -239,22 +243,17 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 2px solid var(--cor-primaria);
 }
 
-#root {
+#nomesSorteados {
+  margin-top: 21px;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .divNome {
-  /* Rectangle 7 */
-
-  box-sizing: border-box;
-
-  width: 709px;
+  width: 100%;
   height: 74px;
-  left: 605px;
-  top: 372px;
 
   border: 2px solid var(--cor-terciaria-100);
   border-radius: 8px;
@@ -263,7 +262,6 @@ input[type="number"]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
   color: var(--cor-primaria);
-
 }
 
 #divTotalNomes {
@@ -278,4 +276,47 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: var(--cor-fundo);
   color: var(--cor-texto-200);
   display: none;
+}
+
+#spa-numeros {
+  margin-top: 89px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#spa-nomes {
+  margin-top: 89px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#resultado-numeros {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.resultado-numero {
+  width: 100%;
+  height: 74px;
+
+  border: 2px solid var(--cor-terciaria-100);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
 }
