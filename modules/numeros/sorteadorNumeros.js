@@ -10,12 +10,16 @@ const conteudoNumeros = `
       <h2>Sorteio de Números</h2>
     </div>
     <div class="sorteador">
-      <p>Sorteador</p>
-      <input type="number" id="quantidade" value="1" />
-      <p>número entre</p>
-      <input type="number" id="comecoNum" value="1" />
-      <p>e</p>
-      <input type="number" id="finalNum" value="100" />
+      <div class="input-sorteador">
+        <p>Sorteador</p>
+        <input type="number" id="quantidade" value="1" />
+      </div>
+      <div class="input-sorteador">
+        <p>número entre</p>
+        <input type="number" id="comecoNum" value="1" />
+        <p>e</p>
+        <input type="number" id="finalNum" value="100" />
+      </div>
     </div>
     <div class="opcoes-checkbox">
       <div class="opcoes">
