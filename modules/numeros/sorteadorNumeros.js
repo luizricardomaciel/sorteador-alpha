@@ -32,6 +32,8 @@ const conteudoNumeros = `
 </div>
 `;
 
+let numerosSorteados = new Set();
+
 export function carregarConteudo() {
   root.innerHTML = conteudoNumeros;
 
@@ -65,36 +67,34 @@ function validarValores() {
 
 function sortearNumeros() {
   const { quantidade, comecoNum, finalNum, naoRepetir } = obterValores();
-
-  const resultados = [];
   const resultadoDiv = document.getElementById("resultado-numeros");
 
-  if (quantidade > (finalNum - comecoNum + 1)) {
-    const aviso = document.createElement("p");
-    aviso.textContent = `A quantidade de números que você deseja sortear é maior que
-        o intervalo dos dois números selecionados`;
-    resultadoDiv.appendChild(aviso);
+  const numerosDisponiveis = (finalNum - comecoNum + 1) - numerosSorteados.size;
+
+  if (numerosDisponiveis < quantidade) {
+    const botaoSortear = document.getElementById("botaoSortear");
+    botaoSortear.disabled = true;
     return;
+  } else {
+    const botaoSortear = document.getElementById("botaoSortear");
+    botaoSortear.disabled = false;
   }
 
+  const resultados = [];
   for (let i = 0; i < quantidade; i++) {
-    const numeroSorteado = Math.floor(Math.random() * (finalNum - comecoNum + 1)) + comecoNum;
+    let numeroSorteado;
+    do {
+      numeroSorteado = Math.floor(Math.random() * (finalNum - comecoNum + 1)) + comecoNum;
+    } while (naoRepetir && numerosSorteados.has(numeroSorteado)); 
 
-    if (naoRepetir) {
-      if (!resultados.includes(numeroSorteado)) {
-        resultados.push(numeroSorteado);
-      } else {
-        i--;
-      }
-    } else {
-      resultados.push(numeroSorteado);
-    }
+    resultados.push(numeroSorteado);
+    numerosSorteados.add(numeroSorteado); 
   }
 
   resultados.forEach((numero) => {
-    const newDiv = document.createElement("div")
+    const newDiv = document.createElement("div");
     const numResultado = document.createElement("p");
-    newDiv.className = "resultado-numero"
+    newDiv.className = "resultado-numero";
     numResultado.textContent = numero;
     newDiv.appendChild(numResultado);
     resultadoDiv.appendChild(newDiv);
