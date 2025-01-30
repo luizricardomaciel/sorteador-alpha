@@ -1,7 +1,12 @@
 import { obterValores } from "./sorteador-numeros-handler.js";
 
+// Conjunto que armazena números já sorteados (caso a opção de não repetir esteja ativada)
 let numerosSorteados = new Set();
 
+/**
+ * Realiza o sorteio de números com base nos valores obtidos.
+ * Os números sorteados são exibidos na interface do usuário.
+ */
 export function sortearNumeros() {
   const { quantidade, comecoNum, finalNum, naoRepetir } = obterValores();
   const resultadoDiv = document.getElementById("resultado-numeros");
@@ -30,11 +35,13 @@ export function sortearNumeros() {
     numerosSorteados.add(numeroSorteado);
   }
 
+  // Adiciona os números sorteados na interface sem sobrescrever os anteriores
   resultados.forEach((numero) => {
     const newDiv = document.createElement("div");
+    const newP = document.createElement("p");
     newDiv.className = "resultado-numero";
-    newDiv.textContent = numero;
-
+    newP.textContent = numero;
+    newDiv.appendChild(newP);
     resultadoDiv.appendChild(newDiv);
   });
 }

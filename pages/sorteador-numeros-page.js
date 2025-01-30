@@ -1,3 +1,7 @@
+/**
+ * Estrutura HTML do sorteador de números como uma string para ser injetada no DOM.
+ * @constant {string}
+ */
 export const conteudoNumeros = `
 <div class="container" id="spa-numeros">
   <div class="spa-result">
