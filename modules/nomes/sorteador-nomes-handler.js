@@ -85,5 +85,3 @@ export const initSorteioNomes = () => {
     quantidadeNomes = 0;
   });
 };
-
-
