@@ -5,9 +5,9 @@ export function criarSorteadorNomePage() {
    <div class="spa-result">
       <div class="title">
         <div class="icon">
-          <h3>Aa</h3>
+          <h3>Abc</h3>
         </div>
-        <h2>Sorteio de nomes</h2>
+        <h2>Sorteio de Nomes</h2>
       </div>
       <div id="divTotalNomes">
          <p>Total de nomes: <span id="quantidadeNomesSorteados"></span></p>
