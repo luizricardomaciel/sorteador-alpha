@@ -1,4 +1,4 @@
-# Sorteador Alpha
+# 🧑‍💻 Sorteador Alpha
 
 Este projeto tem como objetivo criar um site com dois tipos de sorteadores: um para **números** e um para **nomes**, para uso gratuito.
 
