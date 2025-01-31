@@ -13,7 +13,7 @@ export const conteudoNumeros = `
     </div>
     <div class="sorteador">
       <div class="input-sorteador">
-        <p>Sorteador</p>
+        <p>Sortear</p>
         <input type="number" id="quantidade" value="1" />
       </div>
       <div class="input-sorteador">
