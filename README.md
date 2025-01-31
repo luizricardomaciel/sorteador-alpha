@@ -78,7 +78,7 @@ Essas plataformas são gratuitas e oferecem uma maneira rápida de colocar o seu
 
 * HTML5 - Para estruturação da página.
 * CSS3 - Para o estilo visual do projeto.
-* JavaScript Puro - Para a implementação da lógica de sorteio.
+* JavaScript (ES6) - Para a implementação da lógica de sorteio.
 
 
 ## ✒️ Autores
