@@ -22,7 +22,9 @@ export function validarValores() {
   // Verifica se os valores são válidos antes de habilitar o botão
   if (!quantidade || !comecoNum || !finalNum || comecoNum >= finalNum) {
     botaoSortear.disabled = true;
+    botaoSortear.classList.add("botao-bloqueado");
   } else {
     botaoSortear.disabled = false;
+    botaoSortear.classList.remove("botao-bloqueado");
   }
 }
