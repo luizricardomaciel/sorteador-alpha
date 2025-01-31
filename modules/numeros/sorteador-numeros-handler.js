@@ -20,8 +20,7 @@ export function validarValores() {
   const { quantidade, comecoNum, finalNum, botaoSortear, naoRepetir } = obterValores();
 
   // Verifica se os valores são válidos antes de habilitar o botão
-  if (!quantidade || !comecoNum || !finalNum || comecoNum >= finalNum || 
-      (quantidade > (finalNum - comecoNum + 1) && naoRepetir)) {
+  if (!quantidade || !comecoNum || !finalNum || comecoNum >= finalNum) {
     botaoSortear.disabled = true;
   } else {
     botaoSortear.disabled = false;
