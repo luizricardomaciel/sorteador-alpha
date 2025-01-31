@@ -20,7 +20,7 @@ export function sortearNumeros() {
 
   // Gera todos os números possíveis dentro do intervalo
   const todosNumeros = Array.from(
-    { length: finalNum - comecoNum + 1 }, 
+    { length: finalNum - comecoNum + 1 },
     (_, i) => comecoNum + i
   );
 
@@ -35,6 +35,7 @@ export function sortearNumeros() {
   // Verifica se há números suficientes disponíveis para sortear
   if (naoRepetir && numerosDiponiveis.length < quantidade) {
     botaoSortear.disabled = true;
+    botaoSortear.classList.add("botao-bloqueado");
     return;
   }
 
@@ -43,10 +44,10 @@ export function sortearNumeros() {
   for (let i = 0; i < quantidade; i++) {
     // Sorteia um número aleatório do conjunto disponível
     const indiceAleatorio = Math.floor(Math.random() * (naoRepetir ? numerosDiponiveis.length : todosNumeros.length));
-    const numeroSorteado = naoRepetir 
+    const numeroSorteado = naoRepetir
       ? numerosDiponiveis.splice(indiceAleatorio, 1)[0] // Remove o número sorteado do array
       : todosNumeros[Math.floor(Math.random() * todosNumeros.length)];
-    
+
     resultados.push(numeroSorteado);
   }
 
@@ -62,4 +63,5 @@ export function sortearNumeros() {
 
   // Sempre habilita o botão quando "não repetir" está desativado
   botaoSortear.disabled = false;
+  botaoSortear.classList.remove("botao-bloqueado");
 }
