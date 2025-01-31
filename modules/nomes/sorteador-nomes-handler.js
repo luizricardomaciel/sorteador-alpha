@@ -26,6 +26,7 @@ export const initSorteioNomes = () => {
   const voltar = document.getElementById("voltar");
   const nomesSorteados = document.getElementById("nomesSorteados");
   const totalNumerosSorteados = document.getElementById("sorteados");
+  const erroMaximoNomes = document.getElementById("erroMaximoNomes");
 
   /**
    * Valida e atualiza a classe do textarea durante a digitação.
@@ -62,6 +63,7 @@ export const initSorteioNomes = () => {
 
      // Primeira vez que o sorteio é feito, processa os nomes da textarea
     if (primeiraVez == true) {
+      erroMaximoNomes.style.display = "none";
       divTotalNomes.style.display = "flex";
       primeiraVez = false;
 
@@ -86,7 +88,7 @@ export const initSorteioNomes = () => {
     const quantidade = quantidadeSortear.value;
 
     // Realiza o sorteio e o constrói na tela
-    sorteados = sortearNomes(sorteados, listaNomes, quantidade, naoRepetir, nomesSorteados, totalNumerosSorteados);
+    sorteados = sortearNomes(sorteados, listaNomes, quantidade, naoRepetir, nomesSorteados, erroMaximoNomes);
 
      // Atualiza o total de nomes sorteados
     totalNumerosSorteados.innerHTML = sorteados;
@@ -101,6 +103,7 @@ export const initSorteioNomes = () => {
     nomesSorteados.innerHTML = "";
     nomesSorteados.style.display = "none";
     divTotalNomes.style.display = "none";
+    erroMaximoNomes.style.display = "none";
     listaNomes = [];
     primeiraVez = true;
     quantidadeNomes = 0;

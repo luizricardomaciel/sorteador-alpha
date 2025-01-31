@@ -8,11 +8,12 @@ import { pegarNumeroAleatorioListaNomes, criarDivNome } from "./sorteador-nome.j
  * @param {number} quantidade - Quantidade de nomes a serem sorteados.
  * @param {boolean} naoRepetir - Se `true`, evita que nomes já sorteados sejam sorteados novamente.
  * @param {HTMLElement} nomesSorteados - Elemento HTML onde os nomes sorteados serão exibidos.
- * @param {HTMLElement} totalNumerosSorteados - Elemento HTML onde será exibida a quantidade de sorteios realizados.
  */
-export function sortearNomes(sorteados, listaNomes, quantidade, naoRepetir, nomesSorteados, totalNumerosSorteados) {
+export function sortearNomes(sorteados, listaNomes, quantidade, naoRepetir, nomesSorteados, erroMaximoNomes) {
   for (let i = 0; i < quantidade; i++) {
       if (listaNomes.length === 0) {
+        console.log("teste");
+        erroMaximoNomes.style.display = "block";
         return sorteados;
       }
   
@@ -27,5 +28,10 @@ export function sortearNomes(sorteados, listaNomes, quantidade, naoRepetir, nome
       nomesSorteados.appendChild(criarDivNome(sorteado));
       sorteados += 1;
     }
+  
+  if (listaNomes.length === 0) {
+    console.log("teste");
+    erroMaximoNomes.style.display = "block";
+  }
   return sorteados;
 }
