@@ -19,7 +19,7 @@ Para rodar o projeto, você vai precisar de:
   
 ## 🌐 Acesso Online e Local
 Se você preferir não rodar o projeto localmente, basta acessar o site do projeto no seguinte link:  
-[**Acesse o site do Sorteador Alpha**](linkprovisorioporenquanto)
+[**Acesse o site do Sorteador Alpha**](https://sorteador-alpha-smoky.vercel.app/).
 
 #### Para rodar o projeto localmente:
 
