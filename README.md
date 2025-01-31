@@ -13,7 +13,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 Para rodar o projeto, você vai precisar de:
 
-- Um navegador moderno (Chrome, Firefox, etc.).
+- Um navegador moderno (Chrome, OperaGX, Microsoft Edge, etc.).
 - Nenhum software adicional é necessário, o projeto é executado diretamente no navegador.
 
   
