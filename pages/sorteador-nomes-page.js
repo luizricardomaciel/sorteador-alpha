@@ -17,6 +17,7 @@ export function criarSorteadorNomePage() {
         <div id="divTotalNomes">
           <p>Total de nomes: <span id="quantidadeNomesSorteados"></span></p>
           <p>Sorteados: <span id="sorteados"></span></p>
+          <p id="erroMaximoNomes">Máximo de nomes atingidos</p>
         </div>
         <div id="show-hide">
         <div class="sorteador nomes">
