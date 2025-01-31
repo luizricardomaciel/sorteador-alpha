@@ -1,3 +1,7 @@
+/**
+ * Estrutura HTML do sorteador de nomes como uma string para ser injetada no DOM.
+ * @constant {string}
+ */
 export function criarSorteadorNomePage() {
   const container = document.createElement("div");
 
@@ -6,12 +10,13 @@ export function criarSorteadorNomePage() {
     <div class="spa-result">
         <div class="title">
           <div class="icon">
-            <h3>Aa</h3>
+            <h3>Abc</h3>
           </div>
           <h2>Sorteio de nomes</h2>
         </div>
         <div id="divTotalNomes">
           <p>Total de nomes: <span id="quantidadeNomesSorteados"></span></p>
+          <p>Sorteados: <span id="sorteados"></span></p>
         </div>
         <div id="show-hide">
         <div class="sorteador nomes">

@@ -255,6 +255,10 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 2px solid var(--cor-primaria);
 }
 
+.textarea-foco-erro {
+  border: 2px solid #BE264F !important;
+}
+
 #nomesSorteados {
   margin-top: 21px;
 
@@ -278,10 +282,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #divTotalNomes {
   display: none;
-  align-items: right;
+  align-items: flex-end;
   padding: 20px;
   justify-content: end;
   width: 100%;
+  flex-direction: column;
+  gap: 13px;
 }
 
 #voltar {
