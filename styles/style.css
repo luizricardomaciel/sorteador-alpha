@@ -57,6 +57,10 @@ body {
   color: var(--cor-secundaria);
 }
 
+header {
+  background-color: var(--cor-terciaria-200);
+}
+
 header .container {
   display: flex;
   align-items: center;
